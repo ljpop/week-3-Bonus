@@ -36,13 +36,12 @@ body {
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   color: var(--very-dark-grayish-blue);
   width: 100%;
 }
 
 .background-active {
-  /*TODO: JS add class*/
   background: linear-gradient(var(--soft-violet), var(--soft-blue));
 }
 
@@ -55,8 +54,10 @@ body {
   justify-content: center;
   justify-items: center;
   align-items: center;
-  margin: 5px 0; /*TODO: check if padding is better*/
   border-radius: 20px;
+  margin-top: 129px;
+  margin-bottom: 130px;
+  min-height: 509px;
 }
 
 .flex-item {
@@ -75,6 +76,7 @@ h2 {
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
+  margin-bottom: 12px;
 }
 
 .faq-container {
@@ -88,10 +90,13 @@ h2 {
 .question {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .answer {
-  max-width: 90%;
+  max-width: 91%;
+  margin-bottom: 12px;
+  display: none;
 }
 
 .arrow-btn {
@@ -107,63 +112,66 @@ h2:hover {
 .question-box {
   border-bottom: 1px solid var(--light-grayish-blue);
 }
+
 .question-box {
-  border-bottom: 1px solid var(--light-grayish-blue);
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
-@media screen and (max-width: 700px) {
+
+.question-box:last-child {
+  margin-bottom: 83px;
+}
+
+.woman-image {
+  border: 2px solid blue;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 850px) {
   h1 {
     text-align: center;
     margin-bottom: 38px;
   }
+
+  h2 {
+    font-size: 13px;
+  }
   .flex-container {
     flex-direction: column;
     margin: 0 24px;
+    margin-top: 148px;
+    margin-bottom: 85px;
   }
 
   .faq-container {
     padding: 0px;
     margin: 0 24px;
+    width: 90%;
+
+    flex-shrink: 1; /*TODO: */
   }
 
   .questions {
     width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .question-box:last-child {
+    margin-bottom: 48px;
   }
 }
-
 @media screen and (max-width: 350px) {
   .flex-container {
     flex-direction: column;
-    margin: 0 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .faq-container {
     padding: 0px;
     margin: 0 10px;
   }
-}
-
-/* 
-.faq-container {
-  border: 1px solid blue;
-}
-
-.questions {
-  border: 2px solid green;
-}
-.question-box {
-  border: 1px solid red;
-}
-
-.question {
-  background: yellow;
-}
-
-.answer {
-  background: pink;
-} */
-
-/* .answer {
-  visibility: hidden;
 }
 
 .question-box.show h2 {
@@ -171,9 +179,9 @@ h2:hover {
 }
 
 .question-box.show .answer {
-  visibility: visible;
+  display: block;
 }
 
 .question-box.show .arrow-btn.rotate {
   transform: rotate(180deg);
-} */
+}
